@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Врач УЗИ — Приём и запись</title>
+  <style>
+    :root{
+      --bg:#f7f9fb; --card:#ffffff; --accent:#0066b3; --muted:#6b7280;
+      --maxw:900px;
+      font-family: Inter, Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#122;line-height:1.45}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px;background:linear-gradient(90deg,#fffefc, #f4fbff);border-radius:10px;box-shadow:0 6px 18px rgba(10,20,40,0.06)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#00a3ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px}
+    .name{font-size:18px;font-weight:600}
+    .role{font-size:13px;color:var(--muted)}
+    .contacts{text-align:right}
+    .contacts a{display:inline-block;color:var(--accent);text-decoration:none;font-weight:600;margin-left:8px}
+    main{display:grid;grid-template-columns:1fr 340px;gap:18px;margin-top:18px}
+    @media (max-width:880px){main{grid-template-columns:1fr} .contacts{text-align:left}}
+    .card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(10,20,40,0.04)}
+    .hero{display:flex;gap:16px;align-items:center}
+    .photo{width:110px;height:110px;border-radius:10px;background:#e9eef6;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+    h1{margin:0;font-size:20px}
+    .spec{color:var(--muted);margin-top:6px}
+    .about{margin-top:12px;color:#223}
+    .services{display:grid;gap:10px;margin-top:12px}
+    .service{padding:10px;border-radius:8px;border:1px solid #eef3fb}
+    .price{float:right;font-weight:600;color:var(--accent)}
+    .right-column{position:relative}
+    form label{display:block;font-size:13px;color:var(--muted);margin-top:10px}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef7;margin-top:6px;font-size:14px}
+    button{margin-top:12px;background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer}
+    .note{font-size:13px;color:var(--muted);margin-top:8px}
+    .list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{background:#f1f6fb;padding:6px 8px;border-radius:999px;font-size:13px;color:var(--accent);border:1px solid #e1f0ff}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+    .reviews{margin-top:12px}
+    .review{border-left:3px solid #eef6ff;padding:10px;margin-top:8px;border-radius:6px;background:#fbfdff}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">УЗИ</div>
+        <div>
+          <div class="name">Кадырова Соджида</div>
+          <div class="role">Врач ультразвуковой диагностики</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <div class="role">Приём по записи</div>
+        <div style="margin-top:6px"><a href="tel:+992918845520">+992 (918) 84-55-20</a></div>
+        <div class="note">г. Худжанд, клиника «Насли Солим» — кабинет 3</div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="card hero">
+          <div class="photo">Фото</div>
+          <div>
+            <h1>Кадырова Соджида, врач-узист</h1>
+            <div class="spec">10 лет опыта • Ведение беременности • Абдоминальные исследования • Мочеполовая система</div>
+            <div class="about">
+              Провожу точную и комфортную УЗД диагностику с подробными заключениями и рекомендациями. Использую современные ультразвуковые аппараты, внимательна к пациентам, объясняю результаты доступно.
+            </div>
+            <div class="list" aria-hidden="true">
+              <div class="chip">УЗИ при беременности</div>
+              <div class="chip">Детское УЗИ</div>
+              <div class="chip">Абдоминальное</div>
+              <div class="chip">Щитовидная железа</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card services">
+          <h3 style="margin:0 0 8px 0">Услуги</h3>
+          <div class="service">
+            <strong>УЗИ при беременности</strong><span class="price">от 20 С</span>
+            <div class="note">Скрининг 1/2/3 триместра, определение пола по желанию</div>
+          </div>
+          <div class="service">
+            <strong>Абдоминальное УЗИ</strong><span class="price">от 15 С</span>
+            <div class="note">Печень, желчный пузырь, почки, поджелудочная</div>
+          </div>
+          <div class="service">
+            <strong>УЗИ органов малого таза</strong><span class="price">от 15 С</span>
+            <div class="note">Трансабдоминально и трансвагинально</div>
+          </div>
+        </div>
+
+        <div class="card reviews">
+          <h3 style="margin:0 0 8px 0">Отзывы</h3>
+          <div class="review">
+            <strong>Алена</strong> — Отличный специалист, подробно объяснила результаты и успокоила перед скринингом.
+          </div>
+          <div class="review">
+            <strong>Катя</strong> — Быстро, аккуратно, понятный отчет. Рекомендую.
+          </div>
+        </div>
+      </section>
+
+      <aside class="right-column">
+        <div class="card">
+          <h3 style="margin:0 0 10px 0">Записаться на приём</h3>
+          <form id="booking" onsubmit="event.preventDefault();sendForm();">
+            <label>Имя</label>
+            <input name="name" required placeholder="" />
+            <label>Телефон</label>
+            <input name="phone" required placeholder="+992 (___) ___-__-__" />
+            <label>Услуга</label>
+            <select name="service">
+              <option>УЗИ при беременности</option>
+              <option>Абдоминальное УЗИ</option>
+              <option>УЗИ малого таза</option>
+              <option>Другое</option>
+            </select>
+            <label>Предпочтительная дата и время</label>
+            <input name="datetime" placeholder="20.12.2025, 10:30" />
+            <label>Комментарий</label>
+            <textarea name="note" rows="3" placeholder="Кратко о проблеме или пожеланиях"></textarea>
+            <button type="submit">Отправить заявку</button>
+            <div class="note">Мы свяжемся для подтверждения записи.</div>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top:12px;text-align:center">
+          <div style="font-weight:600">Приёмные часы</div>
+          <div class="note" style="margin-top:8px">Пн–Пт: 09:00–18:00<br>Сб: 09:00–14:00<br>Вс: выходной</div>
+          <div style="margin-top:10px"><a href="tel:+992918845520">Позвонить для записи</a></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © 2025 Кадырова С. — Врач УЗИ · Тел: +992 (918) 84-55-20 · г. Худжанд
+    </footer>
+  </div>
+
+  <script>
+    function sendForm(){
+      const f = document.getElementById('booking');
+      const data = {
+        name: f.name.value,
+        phone: f.phone.value,
+        service: f.service.value,
+        datetime: f.datetime.value,
+        note: f.note.value
+      };
+      // Простая демонстрация: отправка в почту через mailto (замените на реальную интеграцию)
+      const subject = encodeURIComponent('Запись на приём: ' + data.service);
+      const body = encodeURIComponent(
+        'Имя: ' + data.name + '\\nТелефон: ' + data.phone + '\\nУслуга: ' + data.service + '\\nДата/время: ' + data.datetime + '\\nКомментарий: ' + data.note
+      );
+      window.location.href = 'mailto:clinic@example.com?subject=' + subject + '&body=' + body;
+    }
+  </script>
+</body>
+</html>
