@@ -2,164 +2,300 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Врач УЗИ — Приём и запись</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Комронбек Аюбов — Визитка</title>
+  <meta name="description" content="Визитка: контакты, навыки, опыт и проекты" />
+
   <style>
     :root{
-      --bg:#f7f9fb; --card:#ffffff; --accent:#0066b3; --muted:#6b7280;
-      --maxw:900px;
-      font-family: Inter, Roboto, Arial, sans-serif;
+      --bg:#0b1220;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.09);
+      --text:#eaf0ff;
+      --muted:rgba(234,240,255,.72);
+      --brand:#6ae4ff;
+      --brand2:#7c5cff;
+      --border:rgba(255,255,255,.12);
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1040px;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#122;line-height:1.45}
-    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:12px;background:linear-gradient(90deg,#fffefc, #f4fbff);border-radius:10px;box-shadow:0 6px 18px rgba(10,20,40,0.06)}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#00a3ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px}
-    .name{font-size:18px;font-weight:600}
-    .role{font-size:13px;color:var(--muted)}
-    .contacts{text-align:right}
-    .contacts a{display:inline-block;color:var(--accent);text-decoration:none;font-weight:600;margin-left:8px}
-    main{display:grid;grid-template-columns:1fr 340px;gap:18px;margin-top:18px}
-    @media (max-width:880px){main{grid-template-columns:1fr} .contacts{text-align:left}}
-    .card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(10,20,40,0.04)}
-    .hero{display:flex;gap:16px;align-items:center}
-    .photo{width:110px;height:110px;border-radius:10px;background:#e9eef6;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
-    h1{margin:0;font-size:20px}
-    .spec{color:var(--muted);margin-top:6px}
-    .about{margin-top:12px;color:#223}
-    .services{display:grid;gap:10px;margin-top:12px}
-    .service{padding:10px;border-radius:8px;border:1px solid #eef3fb}
-    .price{float:right;font-weight:600;color:var(--accent)}
-    .right-column{position:relative}
-    form label{display:block;font-size:13px;color:var(--muted);margin-top:10px}
-    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef7;margin-top:6px;font-size:14px}
-    button{margin-top:12px;background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer}
-    .note{font-size:13px;color:var(--muted);margin-top:8px}
-    .list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .chip{background:#f1f6fb;padding:6px 8px;border-radius:999px;font-size:13px;color:var(--accent);border:1px solid #e1f0ff}
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-    .reviews{margin-top:12px}
-    .review{border-left:3px solid #eef6ff;padding:10px;margin-top:8px;border-radius:6px;background:#fbfdff}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(124,92,255,.35), transparent 55%),
+        radial-gradient(700px 420px at 80% 20%, rgba(106,228,255,.28), transparent 60%),
+        linear-gradient(180deg, #070b14, var(--bg));
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px;}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:14px 14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      border-radius:22px;
+      box-shadow: var(--shadow);
+      position:sticky; top:14px; z-index:10;
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:260px;
+    }
+    .avatar{
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      display:grid; place-items:center;
+      font-weight:800; color:#08101f;
+      border:1px solid rgba(255,255,255,.25);
+    }
+    .brand h1{font-size:16px; margin:0}
+    .brand p{margin:0; font-size:12.5px; color:var(--muted)}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .nav a{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid transparent;
+      color:var(--muted);
+      font-size:13px;
+      transition:.2s;
+    }
+    .nav a:hover{border-color:var(--border); background:rgba(255,255,255,.05); color:var(--text)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+      margin-top:18px;
+    }
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} header{position:static} }
+    .card{
+      border:1px solid var(--border);
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .hero h2{margin:0 0 10px; font-size:38px; letter-spacing:-.02em}
+    .grad{
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .lead{margin:0; color:var(--muted); font-size:15.5px}
+    .cta{
+      display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:650; font-size:14px;
+      transition:.2s;
+    }
+    .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color: rgba(106,228,255,.35);
+      background: linear-gradient(135deg, rgba(106,228,255,.18), rgba(124,92,255,.16));
+    }
+    .meta{
+      display:grid; gap:12px;
+      grid-template-columns: 1fr;
+    }
+    .pill{
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      display:flex; align-items:flex-start; gap:12px;
+    }
+    .ico{
+      width:34px; height:34px; border-radius:12px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      display:grid; place-items:center;
+      color:var(--brand);
+      flex:0 0 auto;
+    }
+    .pill b{display:block; margin:0 0 4px; font-size:14px}
+    .pill span{color:var(--muted); font-size:13.5px}
+    section{margin-top:18px}
+    .section-title{font-size:16px; margin:0 0 12px; color:rgba(234,240,255,.9)}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
+    .item{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:14px;
+    }
+    .item h3{margin:0 0 8px; font-size:14.5px}
+    .item p{margin:0; color:var(--muted); font-size:13.5px}
+    ul.clean{list-style:none; padding:0; margin:0; display:grid; gap:10px}
+    .row{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+      padding:12px 14px; border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+    }
+    .row b{font-size:14px}
+    .row span{color:var(--muted); font-size:13.5px}
+    .tag{
+      font-size:12.5px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      color:var(--muted);
+      white-space:nowrap;
+      background:rgba(255,255,255,.03);
+      align-self:flex-start;
+    }
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      text-align:center;
+      font-size:13px;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
       <div class="brand">
-        <div class="logo">УЗИ</div>
+        <div class="avatar">KA</div>
         <div>
-          <div class="name">Кадырова Соджида</div>
-          <div class="role">Врач ультразвуковой диагностики</div>
+          <h1>Комронбек Аюбов</h1>
+          <p>Инженер-программист • Golang / JS / C++</p>
         </div>
       </div>
-      <div class="contacts">
-        <div class="role">Приём по записи</div>
-        <div style="margin-top:6px"><a href="tel:+992918845520">+992 (918) 84-55-20</a></div>
-        <div class="note">г. Худжанд, клиника «Насли Солим» — кабинет 3</div>
-      </div>
+      <nav class="nav" aria-label="Навигация">
+        <a href="#about">Обо мне</a>
+        <a href="#skills">Навыки</a>
+        <a href="#work">Опыт</a>
+        <a href="#projects">Проекты</a>
+        <a href="#contact">Контакты</a>
+      </nav>
     </header>
 
-    <main>
-      <section>
-        <div class="card hero">
-          <div class="photo">Фото</div>
+    <div class="hero">
+      <div class="card">
+        <h2>Делаю <span class="grad">веб</span> и <span class="grad">сервисные</span> решения</h2>
+        <p class="lead">
+          Учусь на 4 курсе по направлению инженер-программист. Пробую и развиваю проекты на Go, JavaScript и C++.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Написать письмо</a>
+          <a class="btn" href="#projects">Смотреть проекты</a>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div class="pill" id="contact">
+          <div class="ico">☎</div>
           <div>
-            <h1>Кадырова Соджида, врач-узист</h1>
-            <div class="spec">10 лет опыта • Ведение беременности • Абдоминальные исследования • Мочеполовая система</div>
-            <div class="about">
-              Провожу точную и комфортную УЗД диагностику с подробными заключениями и рекомендациями. Использую современные ультразвуковые аппараты, внимательна к пациентам, объясняю результаты доступно.
-            </div>
-            <div class="list" aria-hidden="true">
-              <div class="chip">УЗИ при беременности</div>
-              <div class="chip">Детское УЗИ</div>
-              <div class="chip">Абдоминальное</div>
-              <div class="chip">Щитовидная железа</div>
-            </div>
+            <b>Телефон</b>
+            <span>+992 98 911 5520</span>
           </div>
+        </div>
+        <div class="pill">
+          <div class="ico">✉</div>
+          <div>
+            <b>Email</b>
+            <span>50lh5h6tu@mozmail.com</span>
+          </div>
+        </div>
+        <div class="pill">
+          <div class="ico">📍</div>
+          <div>
+            <b>Локация</b>
+            <span>Худжанд / Онлайн</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="section-title">Обо мне</div>
+      <div class="card">
+        <p class="lead" style="margin:0">
+          Быстро обучаюсь, умею работать с задачами и документами. Сейчас акцент на разработку и автоматизацию.
+          Цель — уверенно писать код и доводить проекты до результата.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">Навыки</div>
+      <div class="grid">
+        <div class="item">
+          <h3>Go (Golang)</h3>
+          <p>Сервисы, CLI и обработка данных.</p>
+        </div>
+        <div class="item">
+          <h3>JavaScript</h3>
+          <p>Веб-логика, интерактивные интерфейсы (учебные проекты).</p>
+        </div>
+        <div class="item">
+          <h3>C++</h3>
+          <p>Учебные приложения.</p>
+        </div>
+        <div class="item">
+          <h3>Bash</h3>
+          <p>Скрипты, автоматизация рутинных задач (учебные/практика).</p>
+        </div>
+        <div class="item">
+          <h3>Web Design</h3>
+          <p>Верстка и адаптивная подача информации.</p>
+        </div>
+        <div class="item">
+          <h3>Языки</h3>
+          <p>Русский / английский.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-title">Опыт</div>
+      <div class="grid" style="grid-template-columns:1fr">
+        <div class="row">
+          <div>
+            <b>Сотрудник приёмной комиссии • АФЭК</b>
+            <div style="height:6px"></div>
+            <span>Весна 2024 — Осень 2024. Работа с абитуриентами и документами.</span>
+          </div>
+          <div class="tag">Офис/документы</div>
         </div>
 
-        <div class="card services">
-          <h3 style="margin:0 0 8px 0">Услуги</h3>
-          <div class="service">
-            <strong>УЗИ при беременности</strong><span class="price">от 20 С</span>
-            <div class="note">Скрининг 1/2/3 триместра, определение пола по желанию</div>
+        <div class="row">
+          <div>
+            <b>Facility/IT • “Arkon”</b>
+            <div style="height:6px"></div>
+            <span>Осень 2025 — настоящее время. Поддержка по хозяйственному отделу, создание веб-сервисов для автоматизации рутин отделов и извлечения удобных для анализа таблиц.</span>
           </div>
-          <div class="service">
-            <strong>Абдоминальное УЗИ</strong><span class="price">от 15 С</span>
-            <div class="note">Печень, желчный пузырь, почки, поджелудочная</div>
-          </div>
-          <div class="service">
-            <strong>УЗИ органов малого таза</strong><span class="price">от 15 С</span>
-            <div class="note">Трансабдоминально и трансвагинально</div>
-          </div>
+          <div class="tag">IT/поддержка</div>
         </div>
-
-        <div class="card reviews">
-          <h3 style="margin:0 0 8px 0">Отзывы</h3>
-          <div class="review">
-            <strong>Алена</strong> — Отличный специалист, подробно объяснила результаты и успокоила перед скринингом.
-          </div>
-          <div class="review">
-            <strong>Катя</strong> — Быстро, аккуратно, понятный отчет. Рекомендую.
-          </div>
-        </div>
-      </section>
-
-      <aside class="right-column">
-        <div class="card">
-          <h3 style="margin:0 0 10px 0">Записаться на приём</h3>
-          <form id="booking" onsubmit="event.preventDefault();sendForm();">
-            <label>Имя</label>
-            <input name="name" required placeholder="" />
-            <label>Телефон</label>
-            <input name="phone" required placeholder="+992 (___) ___-__-__" />
-            <label>Услуга</label>
-            <select name="service">
-              <option>УЗИ при беременности</option>
-              <option>Абдоминальное УЗИ</option>
-              <option>УЗИ малого таза</option>
-              <option>Другое</option>
-            </select>
-            <label>Предпочтительная дата и время</label>
-            <input name="datetime" placeholder="20.12.2025, 10:30" />
-            <label>Комментарий</label>
-            <textarea name="note" rows="3" placeholder="Кратко о проблеме или пожеланиях"></textarea>
-            <button type="submit">Отправить заявку</button>
-            <div class="note">Мы свяжемся для подтверждения записи.</div>
-          </form>
-        </div>
-
-        <div class="card" style="margin-top:12px;text-align:center">
-          <div style="font-weight:600">Приёмные часы</div>
-          <div class="note" style="margin-top:8px">Пн–Пт: 09:00–18:00<br>Сб: 09:00–14:00<br>Вс: выходной</div>
-          <div style="margin-top:10px"><a href="tel:+992918845520">Позвонить для записи</a></div>
-        </div>
-      </aside>
-    </main>
+      </div>
+    </section>
 
     <footer>
-      © 2025 Кадырова С. — Врач УЗИ · Тел: +992 (918) 84-55-20 · г. Худжанд
+      © <span id="y"></span> Комронбек Аюбов
     </footer>
   </div>
 
   <script>
-    function sendForm(){
-      const f = document.getElementById('booking');
-      const data = {
-        name: f.name.value,
-        phone: f.phone.value,
-        service: f.service.value,
-        datetime: f.datetime.value,
-        note: f.note.value
-      };
-      // Простая демонстрация: отправка в почту через mailto (замените на реальную интеграцию)
-      const subject = encodeURIComponent('Запись на приём: ' + data.service);
-      const body = encodeURIComponent(
-        'Имя: ' + data.name + '\\nТелефон: ' + data.phone + '\\nУслуга: ' + data.service + '\\nДата/время: ' + data.datetime + '\\nКомментарий: ' + data.note
-      );
-      window.location.href = 'mailto:clinic@example.com?subject=' + subject + '&body=' + body;
-    }
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
