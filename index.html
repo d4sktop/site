@@ -55,7 +55,7 @@
     }
     .brand h1{font-size:16px; margin:0}
     .brand p{margin:0; font-size:12.5px; color:var(--muted)}
-    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
     .nav a{
       padding:10px 12px;
       border-radius:14px;
@@ -65,6 +65,34 @@
       transition:.2s;
     }
     .nav a:hover{border-color:var(--border); background:rgba(255,255,255,.05); color:var(--text)}
+    
+    /* Переключатель языка */
+    .lang-switcher{
+      display:flex; align-items:center; gap:3px;
+      background:rgba(255,255,255,.04);
+      padding:3px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      margin-left:6px;
+    }
+    .lang-btn{
+      background:transparent;
+      border:none;
+      color:var(--muted);
+      padding:6px 10px;
+      font-size:12px;
+      font-weight:700;
+      border-radius:9px;
+      cursor:pointer;
+      transition:all .2s;
+    }
+    .lang-btn:hover{color:var(--text)}
+    .lang-btn.active{
+      background:rgba(255,255,255,.12);
+      color:var(--brand);
+      border:1px solid rgba(106,228,255,.3);
+    }
+
     .hero{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
@@ -176,25 +204,29 @@
         <div class="avatar">KA</div>
         <div>
           <h1>Комронбек Аюбов</h1>
-          <p>Инженер-программист • Golang / JS / C++</p>
+          <p data-i18n="role">Инженер-программист • Golang / JS / C++</p>
         </div>
       </div>
       <nav class="nav" aria-label="Навигация">
-        <a href="#about">Обо мне</a>
-        <a href="#skills">Навыки</a>
-        <a href="#work">Опыт</a>
+        <a href="#about" data-i18n="navAbout">Обо мне</a>
+        <a href="#skills" data-i18n="navSkills">Навыки</a>
+        <a href="#work" data-i18n="navWork">Опыт</a>
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="ru" onclick="setLanguage('ru')">RU</button>
+          <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+        </div>
       </nav>
     </header>
 
     <div class="hero">
       <div class="card">
-        <h2>Делаю <span class="grad">веб</span> и <span class="grad">сервисные</span> решения</h2>
-        <p class="lead">
+        <h2 data-i18n="heroTitle">Делаю <span class="grad">веб</span> и <span class="grad">сервисные</span> решения</h2>
+        <p class="lead" data-i18n="heroLead">
           Учусь на 4 курсе по направлению инженер-программист. Пробую и развиваю проекты на Go, JavaScript и C++.
         </p>
 
         <div class="cta">
-          <a class="btn primary" target="_blank" href="https://t.me/amd_x86_64">Написать мне в Telegram</a>
+          <a class="btn primary" target="_blank" href="https://t.me/amd_x86_64" data-i18n="tgBtn">Написать мне в Telegram</a>
         </div>
       </div>
 
@@ -202,31 +234,31 @@
         <div class="pill" id="contact">
           <div class="ico">☎</div>
           <div>
-            <b>Телефон</b>
+            <b data-i18n="phoneLabel">Телефон</b>
             <span>+992 98 911 5520</span>
           </div>
         </div>
         <div class="pill">
           <div class="ico">✉</div>
           <div>
-            <b>Email</b>
+            <b data-i18n="emailLabel">Email</b>
             <span>50lh5h6tu@mozmail.com</span>
           </div>
         </div>
         <div class="pill">
           <div class="ico">📍</div>
           <div>
-            <b>Локация</b>
-            <span>Худжанд / Онлайн</span>
+            <b data-i18n="locLabel">Локация</b>
+            <span data-i18n="locValue">Худжанд / Онлайн</span>
           </div>
         </div>
       </div>
     </div>
 
     <section id="about">
-      <div class="section-title">Обо мне</div>
+      <div class="section-title" data-i18n="aboutTitle">Обо мне</div>
       <div class="card">
-        <p class="lead" style="margin:0">
+        <p class="lead" style="margin:0" data-i18n="aboutText">
           Быстро обучаюсь, умею работать с задачами и документами. Сейчас акцент на разработку и автоматизацию.
           Цель — уверенно писать код и доводить проекты до результата.
         </p>
@@ -234,65 +266,184 @@
     </section>
 
     <section id="skills">
-      <div class="section-title">Навыки</div>
+      <div class="section-title" data-i18n="skillsTitle">Навыки</div>
       <div class="grid">
         <div class="item">
-          <h3>Go (Golang)</h3>
-          <p>Сервисы, CLI и обработка данных.</p>
+          <h3 data-i18n="skillGoTitle">Go (Golang)</h3>
+          <p data-i18n="skillGoDesc">Сервисы, CLI и обработка данных.</p>
         </div>
         <div class="item">
-          <h3>JavaScript</h3>
-          <p>Веб-логика, интерактивные интерфейсы (учебные проекты).</p>
+          <h3 data-i18n="skillJsTitle">JavaScript</h3>
+          <p data-i18n="skillJsDesc">Веб-логика, интерактивные интерфейсы (учебные проекты).</p>
         </div>
         <div class="item">
-          <h3>C++</h3>
-          <p>Учебные приложения.</p>
+          <h3 data-i18n="skillCppTitle">C++</h3>
+          <p data-i18n="skillCppDesc">Учебные приложения.</p>
         </div>
         <div class="item">
-          <h3>Bash</h3>
-          <p>Скрипты, автоматизация рутинных задач (учебные/практика).</p>
+          <h3 data-i18n="skillBashTitle">Bash</h3>
+          <p data-i18n="skillBashDesc">Скрипты, автоматизация рутинных задач (учебные/практика).</p>
         </div>
         <div class="item">
-          <h3>Web Design</h3>
-          <p>Верстка и адаптивная подача информации.</p>
+          <h3 data-i18n="skillWebTitle">Web Design</h3>
+          <p data-i18n="skillWebDesc">Верстка и адаптивная подача информации.</p>
         </div>
         <div class="item">
-          <h3>Языки</h3>
-          <p>Русский / английский.</p>
+          <h3 data-i18n="skillLangTitle">Языки</h3>
+          <p data-i18n="skillLangDesc">Русский / английский.</p>
         </div>
       </div>
     </section>
 
     <section id="work">
-      <div class="section-title">Опыт</div>
+      <div class="section-title" data-i18n="workTitle">Опыт</div>
       <div class="grid" style="grid-template-columns:1fr">
         <div class="row">
           <div>
-            <b>Сотрудник приёмной комиссии • АФЭК</b>
+            <b data-i18n="job1Title">Сотрудник приёмной комиссии • АФЭК</b>
             <div style="height:6px"></div>
-            <span>Весна 2024 — Осень 2024. Работа с абитуриентами и документами.</span>
+            <span data-i18n="job1Desc">Весна 2024 — Осень 2024. Работа с абитуриентами и документами.</span>
           </div>
-          <div class="tag">Офис/документы</div>
+          <div class="tag" data-i18n="job1Tag">Офис/документы</div>
         </div>
 
         <div class="row">
           <div>
-            <b>Facility/IT • “Arkon”</b>
+            <b data-i18n="job2Title">Facility/IT • “Arkon”</b>
             <div style="height:6px"></div>
-            <span>Осень 2025 — настоящее время. Поддержка по хозяйственному отделу, создание веб-сервисов для автоматизации рутин отделов и извлечения удобных для анализа таблиц.</span>
+            <span data-i18n="job2Desc">Осень 2025 — настоящее время. Поддержка по хозяйственному отделу, создание веб-сервисов для автоматизации рутин отделов и извлечения удобных для анализа таблиц.</span>
           </div>
-          <div class="tag">IT/поддержка</div>
+          <div class="tag" data-i18n="job2Tag">IT/поддержка</div>
         </div>
       </div>
     </section>
 
     <footer>
-      © <span id="y"></span> Комронбек Аюбов
+      © <span id="y"></span> <span data-i18n="footerName">Комронбек Аюбов</span>
     </footer>
   </div>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    const i18n = {
+      ru: {
+        pageTitle: "Комронбек Аюбов — Визитка",
+        role: "Инженер-программист • Golang / JS / C++",
+        navAbout: "Обо мне",
+        navSkills: "Навыки",
+        navWork: "Опыт",
+        heroTitle: 'Делаю <span class="grad">веб</span> и <span class="grad">сервисные</span> решения',
+        heroLead: 'Учусь на 4 курсе по направлению инженер-программист. Пробую и развиваю проекты на Go, JavaScript и C++.',
+        tgBtn: "Написать мне в Telegram",
+        phoneLabel: "Телефон",
+        emailLabel: "Email",
+        locLabel: "Локация",
+        locValue: "Худжанд / Онлайн",
+        aboutTitle: "Обо мне",
+        aboutText: "Быстро обучаюсь, умею работать с задачами и документами. Сейчас акцент на разработку и автоматизацию. Цель — уверенно писать код и доводить проекты до результата.",
+        skillsTitle: "Навыки",
+        skillGoTitle: "Go (Golang)",
+        skillGoDesc: "Сервисы, CLI и обработка данных.",
+        skillJsTitle: "JavaScript",
+        skillJsDesc: "Веб-логика, интерактивные интерфейсы (учебные проекты).",
+        skillCppTitle: "C++",
+        skillCppDesc: "Учебные приложения.",
+        skillBashTitle: "Bash",
+        skillBashDesc: "Скрипты, автоматизация рутинных задач (учебные/практика).",
+        skillWebTitle: "Web Design",
+        skillWebDesc: "Верстка и адаптивная подача информации.",
+        skillLangTitle: "Языки",
+        skillLangDesc: "Русский / английский.",
+        workTitle: "Опыт",
+        job1Title: "Сотрудник приёмной комиссии • АФЭК",
+        job1Desc: "Весна 2024 — Осень 2024. Работа с абитуриентами и документами.",
+        job1Tag: "Офис/документы",
+        job2Title: 'Facility/IT • “Arkon”',
+        job2Desc: "Осень 2025 — настоящее время. Поддержка по хозяйственному отделу, создание веб-сервисов для автоматизации рутин отделов и извлечения удобных для анализа таблиц.",
+        job2Tag: "IT/поддержка",
+        footerName: "Комронбек Аюбов"
+      },
+      en: {
+        pageTitle: "Komronbek Ayubov — Business Card",
+        role: "Software Engineer • Golang / JS / C++",
+        navAbout: "About",
+        navSkills: "Skills",
+        navWork: "Experience",
+        heroTitle: 'Building <span class="grad">web</span> and <span class="grad">service</span> solutions',
+        heroLead: '4th-year Software Engineering student. Building and developing projects with Go, JavaScript, and C++.',
+        tgBtn: "Message me on Telegram",
+        phoneLabel: "Phone",
+        emailLabel: "Email",
+        locLabel: "Location",
+        locValue: "Khujand / Remote",
+        aboutTitle: "About Me",
+        aboutText: "Fast learner with strong organizational skills. Currently focused on software development and automation. Goal: write robust code and ship impactful projects.",
+        skillsTitle: "Skills",
+        skillGoTitle: "Go (Golang)",
+        skillGoDesc: "Services, CLI tools, and data processing.",
+        skillJsTitle: "JavaScript",
+        skillJsDesc: "Web logic, interactive interfaces (academic projects).",
+        skillCppTitle: "C++",
+        skillCppDesc: "Academic applications.",
+        skillBashTitle: "Bash",
+        skillBashDesc: "Scripting and routine task automation (practice/academic).",
+        skillWebTitle: "Web Design",
+        skillWebDesc: "Layout and responsive content presentation.",
+        skillLangTitle: "Languages",
+        skillLangDesc: "Russian / English.",
+        workTitle: "Experience",
+        job1Title: "Admissions Office Specialist • AFEK",
+        job1Desc: "Spring 2024 — Autumn 2024. Handled applicant relations and documentation.",
+        job1Tag: "Office/Docs",
+        job2Title: 'Facility/IT • “Arkon”',
+        job2Desc: "Autumn 2025 — Present. Facility support, developing web services to automate departmental routines and extract structured tables for analysis.",
+        job2Tag: "IT/Support",
+        footerName: "Komronbek Ayubov"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+
+      // Обновляем состояние кнопок
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      // Переводим все элементы с атрибутом data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (i18n[lang] && i18n[lang][key]) {
+          if (key === 'heroTitle') {
+            el.innerHTML = i18n[lang][key];
+          } else {
+            el.textContent = i18n[lang][key];
+          }
+        }
+      });
+
+      if (i18n[lang].pageTitle) {
+        document.title = i18n[lang].pageTitle;
+      }
+    }
+
+    function initLanguage() {
+      // 1. Проверяем сохранённый выбор пользователя
+      const savedLang = localStorage.getItem('lang');
+      if (savedLang && (savedLang === 'ru' || savedLang === 'en')) {
+        setLanguage(savedLang);
+        return;
+      }
+
+      // 2. Если нет сохранённого — определяем по языку браузера/системы
+      const sysLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      const defaultLang = sysLang.startsWith('ru') ? 'ru' : 'en';
+      setLanguage(defaultLang);
+    }
+
+    initLanguage();
   </script>
 </body>
 </html>
