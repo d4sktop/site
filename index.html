@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Комронбек Аюбов — Визитка</title>
+  <title data-i18n="pageTitle">Сайт-Визитка</title>
   <meta name="description" content="Визитка: контакты, навыки, опыт и проекты" />
-<!-- Иконка с вашими инициалами KA на тёмном фоне -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='30' fill='%230b1220'/><text x='45%' y='40%' dominant-baseline='central' text-anchor='middle' fill='%236ae4ff' font-family='sans-serif' font-weight='800' font-size='45'>>_</text></svg>">
   <style>
     :root{
@@ -204,7 +203,7 @@
       <div class="brand">
         <div class="avatar">KA</div>
         <div>
-          <h1>Комронбек Аюбов</h1>
+          <h1 data-i18n="nameTitle">Комронбек Аюбов</h1>
           <p data-i18n="role">Инженер-программист • Golang / JS / C++</p>
         </div>
       </div>
@@ -316,6 +315,14 @@
           </div>
           <div class="tag" data-i18n="job2Tag">IT/поддержка</div>
         </div>
+        <div class="row">
+          <div>
+            <b data-i18n="pet2Title">Множество хобби проектов</b>
+            <div style="height:6px"></div>
+            <span data-i18n="pet2Desc">Создание сайтов на заказ, перепрофилирование нецелевого оборудования для обеспечения NAS дома, развёртывание сервисов Jellyfin, Bittorrent, Pi-Hole в домашней сети, а также полный цикл администрирования сервера по SSH</span>
+          </div>
+          <div class="tag" data-i18n="job2Tag">IT/поддержка</div>
+        </div>
       </div>
     </section>
 
@@ -324,127 +331,133 @@
     </footer>
   </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-    const i18n = {
-      ru: {
-        pageTitle: "Комронбек Аюбов — Визитка",
-        role: "Инженер-программист • Golang / JS / C++",
-        navAbout: "Обо мне",
-        navSkills: "Навыки",
-        navWork: "Опыт",
-        heroTitle: 'Делаю <span class="grad">веб</span> и <span class="grad">сервисные</span> решения',
-        heroLead: 'Учусь на 4 курсе по направлению инженер-программист. Пробую и развиваю проекты на Go, JavaScript и C++.',
-        tgBtn: "Написать мне в Telegram",
-        phoneLabel: "Телефон",
-        emailLabel: "Email",
-        locLabel: "Локация",
-        locValue: "Худжанд / Онлайн",
-        aboutTitle: "Обо мне",
-        aboutText: "Быстро обучаюсь, умею работать с задачами и документами. Сейчас акцент на разработку и автоматизацию. Цель — уверенно писать код и доводить проекты до результата.",
-        skillsTitle: "Навыки",
-        skillGoTitle: "Go (Golang)",
-        skillGoDesc: "Сервисы, CLI и обработка данных.",
-        skillJsTitle: "JavaScript",
-        skillJsDesc: "Веб-логика, интерактивные интерфейсы (учебные проекты).",
-        skillCppTitle: "C++",
-        skillCppDesc: "Учебные приложения.",
-        skillBashTitle: "Bash",
-        skillBashDesc: "Скрипты, автоматизация рутинных задач (учебные/практика).",
-        skillWebTitle: "Web Design",
-        skillWebDesc: "Верстка и адаптивная подача информации.",
-        skillLangTitle: "Языки",
-        skillLangDesc: "Русский / английский.",
-        workTitle: "Опыт",
-        job1Title: "Сотрудник приёмной комиссии • АФЭК",
-        job1Desc: "Весна 2024 — Осень 2024. Работа с абитуриентами и документами.",
-        job1Tag: "Офис/документы",
-        job2Title: 'Facility/IT • “Arkon”',
-        job2Desc: "Осень 2025 — настоящее время. Поддержка по хозяйственному отделу, создание веб-сервисов для автоматизации рутин отделов и извлечения удобных для анализа таблиц.",
-        job2Tag: "IT/поддержка",
-        footerName: "Комронбек Аюбов"
-      },
-      en: {
-        pageTitle: "Komronbek Ayubov — Business Card",
-        role: "Software Engineer • Golang / JS / C++",
-        navAbout: "About",
-        navSkills: "Skills",
-        navWork: "Experience",
-        heroTitle: 'Building <span class="grad">web</span> and <span class="grad">service</span> solutions',
-        heroLead: '4th-year Software Engineering student. Building and developing projects with Go, JavaScript, and C++.',
-        tgBtn: "Message me on Telegram",
-        phoneLabel: "Phone",
-        emailLabel: "Email",
-        locLabel: "Location",
-        locValue: "Khujand / Remote",
-        aboutTitle: "About Me",
-        aboutText: "Fast learner with strong organizational skills. Currently focused on software development and automation. Goal: write robust code and ship impactful projects.",
-        skillsTitle: "Skills",
-        skillGoTitle: "Go (Golang)",
-        skillGoDesc: "Services, CLI tools, and data processing.",
-        skillJsTitle: "JavaScript",
-        skillJsDesc: "Web logic, interactive interfaces (academic projects).",
-        skillCppTitle: "C++",
-        skillCppDesc: "Academic applications.",
-        skillBashTitle: "Bash",
-        skillBashDesc: "Scripting and routine task automation (practice/academic).",
-        skillWebTitle: "Web Design",
-        skillWebDesc: "Layout and responsive content presentation.",
-        skillLangTitle: "Languages",
-        skillLangDesc: "Russian / English.",
-        workTitle: "Experience",
-        job1Title: "Admissions Office Specialist • AFEK",
-        job1Desc: "Spring 2024 — Autumn 2024. Handled applicant relations and documentation.",
-        job1Tag: "Office/Docs",
-        job2Title: 'Facility/IT • “Arkon”',
-        job2Desc: "Autumn 2025 — Present. Facility support, developing web services to automate departmental routines and extract structured tables for analysis.",
-        job2Tag: "IT/Support",
-        footerName: "Komronbek Ayubov"
-      }
-    };
+  const i18n = {
+    ru: {
+      pageTitle: "Сайт-визитка",
+      nameTitle: "Комронбек Аюбов",
+      role: "Инженер-программист • Golang / JS / C++",
+      navAbout: "Обо мне",
+      navSkills: "Навыки",
+      navWork: "Опыт",
+      heroTitle: 'Делаю <span class="grad">веб</span> и <span class="grad">сервисные</span> решения',
+      heroLead: 'Учусь на 4 курсе по направлению инженер-программист. Пробую и развиваю проекты на Go, JavaScript и C++.',
+      tgBtn: "Написать мне в Telegram",
+      phoneLabel: "Телефон",
+      emailLabel: "Email",
+      locLabel: "Локация",
+      locValue: "Худжанд / Онлайн",
+      aboutTitle: "Обо мне",
+      aboutText: "Быстро обучаюсь, умею работать с задачами и документами. Сейчас акцент на разработку и автоматизацию. Цель — уверенно писать код и доводить проекты до результата.",
+      skillsTitle: "Навыки",
+      skillGoTitle: "Go (Golang)",
+      skillGoDesc: "Сервисы, CLI и обработка данных.",
+      skillJsTitle: "JavaScript",
+      skillJsDesc: "Веб-логика, интерактивные интерфейсы (учебные проекты).",
+      skillCppTitle: "C++",
+      skillCppDesc: "Учебные приложения.",
+      skillBashTitle: "Bash",
+      skillBashDesc: "Скрипты, автоматизация рутинных задач (учебные/практика).",
+      skillWebTitle: "Web Design",
+      skillWebDesc: "Верстка и адаптивная подача информации.",
+      skillLangTitle: "Языки",
+      skillLangDesc: "Русский / английский.",
+      workTitle: "Опыт",
+      job1Title: "Сотрудник приёмной комиссии • АФЭК",
+      job1Desc: "Весна 2024 — Осень 2024. Работа с абитуриентами и документами.",
+      job1Tag: "Офис/документы",
+      job2Title: 'Facility/IT • “Arkon”',
+      job2Desc: "Осень 2025 — настоящее время. Поддержка по хозяйственному отделу, создание веб-сервисов для автоматизации рутин отделов и извлечения удобных для анализа таблиц.",
+      job2Tag: "IT/поддержка",
+      pet2Title: "Множество хобби проектов",
+      pet2Desc: "Создание сайтов на заказ, перепрофилирование нецелевого оборудования для обеспечения NAS дома, развёртывание сервисов Jellyfin, Bittorrent, Pi-Hole в домашней сети, а также полный цикл администрирования сервера по SSH",
+      footerName: "Комронбек Аюбов"
+    },
+    en: {
+      pageTitle: "Business Card",
+      nameTitle: "Komronbek Ayubov",
+      role: "Software Engineer • Golang / JS / C++",
+      navAbout: "About",
+      navSkills: "Skills",
+      navWork: "Experience",
+      heroTitle: 'Building <span class="grad">web</span> and <span class="grad">service</span> solutions',
+      heroLead: '4th-year Software Engineering student. Building and developing projects with Go, JavaScript, and C++.',
+      tgBtn: "Message me on Telegram",
+      phoneLabel: "Phone",
+      emailLabel: "Email",
+      locLabel: "Location",
+      locValue: "Khujand / Remote",
+      aboutTitle: "About Me",
+      aboutText: "Fast learner with strong organizational skills. Currently focused on software development and automation. Goal: write robust code and ship impactful projects.",
+      skillsTitle: "Skills",
+      skillGoTitle: "Go (Golang)",
+      skillGoDesc: "Services, CLI tools, and data processing.",
+      skillJsTitle: "JavaScript",
+      skillJsDesc: "Web logic, interactive interfaces (academic projects).",
+      skillCppTitle: "C++",
+      skillCppDesc: "Academic applications.",
+      skillBashTitle: "Bash",
+      skillBashDesc: "Scripting and routine task automation (practice/academic).",
+      skillWebTitle: "Web Design",
+      skillWebDesc: "Layout and responsive content presentation.",
+      skillLangTitle: "Languages",
+      skillLangDesc: "Russian / English.",
+      workTitle: "Experience",
+      job1Title: "Admissions Office Specialist • AFEK",
+      job1Desc: "Spring 2024 — Autumn 2024. Handled applicant relations and documentation.",
+      job1Tag: "Office/Docs",
+      job2Title: 'Facility/IT • “Arkon”',
+      job2Desc: "Autumn 2025 — Present. Facility support, developing web services to automate departmental routines and extract structured tables for analysis.",
+      job2Tag: "IT/Support",
+      pet2Title: "Huge amount of pet projects",
+      pet2Desc: "Custom website development, repurposing off-purpose hardware to set up a home NAS, deploying Jellyfin, BitTorrent, and Pi-Hole services on a home network, as well as full-cycle server administration via SSH",
+      footerName: "Komronbek Ayubov"
+    }
+  };
 
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
-      localStorage.setItem('lang', lang);
+  function setLanguage(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('lang', lang);
 
-      // Обновляем состояние кнопок
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
+    // Обновляем состояние кнопок
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
 
-      // Переводим все элементы с атрибутом data-i18n
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        if (i18n[lang] && i18n[lang][key]) {
-          if (key === 'heroTitle') {
-            el.innerHTML = i18n[lang][key];
-          } else {
-            el.textContent = i18n[lang][key];
-          }
+    // Переводим все элементы с атрибутом data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (i18n[lang] && i18n[lang][key]) {
+        if (key === 'heroTitle') {
+          el.innerHTML = i18n[lang][key];
+        } else {
+          el.textContent = i18n[lang][key];
         }
-      });
-
-      if (i18n[lang].pageTitle) {
-        document.title = i18n[lang].pageTitle;
       }
+    });
+
+    if (i18n[lang].pageTitle) {
+      document.title = i18n[lang].pageTitle;
+    }
+  }
+
+  function initLanguage() {
+    // 1. Проверяем сохранённый выбор пользователя
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && (savedLang === 'ru' || savedLang === 'en')) {
+      setLanguage(savedLang);
+      return;
     }
 
-    function initLanguage() {
-      // 1. Проверяем сохранённый выбор пользователя
-      const savedLang = localStorage.getItem('lang');
-      if (savedLang && (savedLang === 'ru' || savedLang === 'en')) {
-        setLanguage(savedLang);
-        return;
-      }
+    // 2. Если нет сохранённого — определяем по языку браузера/системы
+    const sysLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    const defaultLang = sysLang.startsWith('ru') ? 'ru' : 'en';
+    setLanguage(defaultLang);
+  }
 
-      // 2. Если нет сохранённого — определяем по языку браузера/системы
-      const sysLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-      const defaultLang = sysLang.startsWith('ru') ? 'ru' : 'en';
-      setLanguage(defaultLang);
-    }
-
-    initLanguage();
-  </script>
+  initLanguage();
+</script>
 </body>
 </html>
