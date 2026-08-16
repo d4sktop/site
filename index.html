@@ -152,7 +152,7 @@
       backdrop-filter: blur(10px);
       transition: border-color 0.3s ease, transform 0.3s ease;
     }
-    .card:hover { border-color: rgba(255, 255, 255, 0.2); }
+    .card:hover {   border-color: var(--brand); }
     
     .hero h2 { margin: 0 0 12px; font-size: 36px; letter-spacing: -0.02em; line-height: 1.2; }
     .grad {
@@ -203,7 +203,7 @@
       display: flex; align-items: center; gap: 14px;
       transition: all 0.25s ease;
     }
-    .pill:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.2); }
+    .pill:hover { background: rgba(255, 255, 255, 0.06);   border-color: var(--brand); }
     .ico {
       width: 38px; height: 38px; border-radius: 12px;
       background: rgba(106, 228, 255, 0.08); border: 1px solid rgba(106, 228, 255, 0.2);
@@ -293,6 +293,8 @@
     .feature-row .term-card:hover {
       transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateY(-5px);
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+        border-color: var(--brand);
+
     }
     
     .term-header {
@@ -308,14 +310,15 @@
     .dot.yel { background: #ffbd2e; }
     .dot.grn { background: #27c93f; }
     
-    .term-body {
-      padding: 20px;
-      font-family: 'Fira Code', Consolas, 'Courier New', monospace;
-      font-size: 13.5px;
-      color: #cbd5e1;
-      line-height: 1.6;
-      overflow-x: auto;
-    }
+  
+.term-body {
+  padding: 16px;
+  font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+  font-size: 13.5px; /* Дефолтный для ПК */
+  color: #cbd5e1;
+  line-height: 1.5;
+  overflow-x: auto;
+}
     .term-body pre { margin: 0; font-family: inherit; }
     
     .c-green { color: #50fa7b; }
@@ -340,8 +343,192 @@
         transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); 
         box-shadow: 0 20px 40px rgba(0,0,0,0.5);
       }
-      .term-body { font-size: 12px; padding: 16px; }
+      .term-body { font-size: 10.5px; /* Уменьшаем шрифт, чтобы строки не переносились раньше времени */
+    padding: 10px 12px; /* Убираем лишние отступы */}
     }
+/* --- MACBOOK 3D SCROLL ANIMATION --- */
+/* --- DEVICE SCROLL ANIMATION (Ноутбук на ПК / Смартфон на мобилках) --- */
+.device-scene {
+  perspective: 2000px;
+  margin-top: 50px;
+  position: relative;
+}
+
+/* --- НОУТБУК (ПК ВЕРСИЯ) --- */
+.laptop-wrap {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  transform: rotateX(8deg);
+}
+.laptop-lid {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: bottom center;
+  transform: rotateX(-95deg); /* Закрыто по умолчанию */
+  z-index: 2;
+  will-change: transform;
+}
+.laptop-screen, .laptop-lid-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px 16px 0 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.laptop-screen {
+  background: #0f172a;
+  border: 12px solid #000;
+  border-bottom-width: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+}
+.device-content {
+  flex: 1;
+  background: var(--bg);
+  padding: 24px;
+  overflow-y: auto;
+}
+.device-content::-webkit-scrollbar { width: 6px; }
+.device-content::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 4px; }
+
+.laptop-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.laptop-grid .item {
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.laptop-bezel-bottom {
+  position: absolute;
+  bottom: -20px;
+  left: 0; right: 0;
+  text-align: center;
+  font-size: 10px;
+  color: #444;
+  letter-spacing: 2px;
+  font-weight: 600;
+  pointer-events: none;
+}
+.laptop-lid-back {
+  background: linear-gradient(to bottom, #4a4f56, #2d3136);
+  transform: rotateY(180deg);
+  border: 2px solid #555;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mb-logo {
+  font-size: 60px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.1);
+  letter-spacing: -4px;
+}
+.laptop-base {
+  width: 100%;
+  height: 16px;
+  background: linear-gradient(to right, #666, #999, #666);
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 30px 50px rgba(0,0,0,0.6), inset 0 2px 2px rgba(255,255,255,0.4);
+}
+.laptop-notch {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 120px; height: 6px;
+  background: #444;
+  border-radius: 0 0 6px 6px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* --- СМАРТФОН (МОБИЛЬНАЯ ВЕРСИЯ) --- */
+.phone-wrap {
+  max-width: 380px;
+  margin: 0 auto;
+  background: #1e293b;
+  border: 10px solid #111;
+  border-radius: 40px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 0 0 15px rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+  /* Убрали opacity, transform и transition — теперь телефон статичен */
+}
+
+.phone-speaker {
+  width: 70px; height: 16px;
+  background: #000;
+  position: absolute;
+  top: 8px; left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  z-index: 10;
+}
+.phone-screen {
+  background: var(--bg);
+  max-height: 600px;
+  height: auto;           /* Высота подстраивается под контент */
+  min-height: 520px;      /* Сделайте телефон выше (было 520px) */
+  padding: 35px 12px 20px 12px;
+  overflow-y: auto;
+}
+.phone-screen::-webkit-scrollbar { width: 4px; }
+.phone-screen::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 4px; }
+.phone-grid {
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.phone-grid .item {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* --- КОНТРАСТНЫЙ СТИЛЬ ДЛЯ СЕКЦИИ ОПЫТА --- */
+/* Стили для шапки карточки опыта */
+#work .grid .row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Отступ между элементами внутри карточки */
+}
+
+/* Контейнер для заголовка и бейджа */
+.row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Заголовок не будет сжиматься раньше времени */
+.row-top h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.3;
+  flex: 1; /* Занимает всё доступное пространство */
+}
+
+/* Бейдж категории */
+.row-badge {
+  white-space: nowrap; /* Чтобы текст в теге не переносился */
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 20px;
+  /* ваши остальные стили бейджа */
+}
+#work .grid .row:hover {
+  border-color: var(--brand);
+  box-shadow: 0 15px 40px rgba(106, 228, 255, 0.15);
+}
 
     /* Sections */
     section { margin-top: 24px; }
@@ -363,7 +550,7 @@
     }
     .item:hover {
       background: rgba(255, 255, 255, 0.06);
-      border-color: var(--border-glow);
+      border-color: var(--brand);
       transform: translateY(-3px);
     }
     .item-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -382,8 +569,8 @@
       transition: all 0.3s ease;
     }
     .service-card:hover {
-      border-color: rgba(106, 228, 255, 0.4);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border-color: var(--brand);
+      
       transform: translateY(-4px);
     }
     .service-icon {
@@ -479,18 +666,18 @@
           </div>
           <div>
             <b data-i18n="phoneLabel">Телефон</b>
-            <span>+992 98 911 5520</span>
+            <span><a href="tel:+992989115520">+992 98 911 5520</a></span>
           </div>
         </div>
         <div class="pill">
           <div class="ico">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <div>
+          <div><a href="mailto:50lh5h6tu@mozmail.com">
             <b data-i18n="emailLabel">Email</b>
             <span>50lh5h6tu@mozmail.com</span>
           </div>
-        </div>
+        </div></a>
         <div class="pill">
           <div class="ico">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -625,57 +812,88 @@
         </p>
       </div>
     </section>
+<section id="skills" class="device-scene">
+  <div class="section-title" style="margin-bottom: 25px;">
+    <svg width="20" height="20" fill="none" stroke="var(--brand)" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    <span data-i18n="skillsTitle">Навыки</span>
+  </div>
 
-    <section id="skills">
-      <div class="section-title">
-        <svg width="20" height="20" fill="none" stroke="var(--brand)" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        <span data-i18n="skillsTitle">Навыки</span>
+  <!-- ДЛЯ ПК: Ноутбук с 3D крышкой -->
+  <div class="laptop-wrap" id="laptopWrap">
+    <div class="laptop-lid" id="laptopLid">
+      <div class="laptop-lid-back">
+        <div class="mb-logo">/>_</div>
       </div>
-      <div class="grid">
-        <div class="item">
-          <div class="item-header">
-            <h3 data-i18n="skillGoTitle">Go (Golang)</h3>
+      <div class="laptop-screen">
+        <div class="device-content">
+          <div class="grid laptop-grid">
+            <div class="item">
+              <div class="item-header"><h3 data-i18n="skillGoTitle">Go (Golang)</h3></div>
+              <p data-i18n="skillGoDesc">Бэкенд-сервисы, REST API, CLI утилиты и параллельная обработка данных.</p>
+            </div>
+            <div class="item">
+              <div class="item-header"><h3 data-i18n="skillLinuxTitle">Linux & SysAdmin</h3></div>
+              <p data-i18n="skillLinuxDesc">Ubuntu Server, SSH, Systemd, Cron, Nginx, Docker, диагностика через CLI.</p>
+            </div>
+            <div class="item">
+              <div class="item-header"><h3 data-i18n="skillVpnTitle">VPN & Security</h3></div>
+              <p data-i18n="skillVpnDesc">WireGuard, AmneziaWG, OpenVPN, Pi-hole (DNS-фильтрация), роутинг.</p>
+            </div>
+            <div class="item">
+              <div class="item-header"><h3 data-i18n="skillJsTitle">JavaScript & Web</h3></div>
+              <p data-i18n="skillJsDesc">Адаптивная верстка, HTML5/CSS3, клиентская логика и интеграция API.</p>
+            </div>
+            <div class="item">
+              <div class="item-header"><h3 data-i18n="skillBashTitle">Bash & Automation</h3></div>
+              <p data-i18n="skillBashDesc">Написание скриптов автоматизации рутинных задач и бэкапов.</p>
+            </div>
+            <div class="item">
+              <div class="item-header"><h3 data-i18n="skillCppTitle">C++</h3></div>
+              <p data-i18n="skillCppDesc">Базовые алгоритмы, структуры данных, академические проекты.</p>
+            </div>
           </div>
+        </div>
+        <div class="laptop-bezel-bottom">DevBook Pro</div>
+      </div>
+    </div>
+    <div class="laptop-base">
+      <div class="laptop-notch"></div>
+    </div>
+  </div>
+
+  <!-- ДЛЯ ТЕЛЕФОНОВ: Смартфон с вертикальным скроллом -->
+  <div class="phone-wrap" id="phoneWrap">
+    <div class="phone-speaker"></div>
+    <div class="phone-screen">
+      <div class="grid phone-grid">
+        <div class="item">
+          <div class="item-header"><h3 data-i18n="skillGoTitle">Go (Golang)</h3></div>
           <p data-i18n="skillGoDesc">Бэкенд-сервисы, REST API, CLI утилиты и параллельная обработка данных.</p>
         </div>
-
         <div class="item">
-          <div class="item-header">
-            <h3 data-i18n="skillLinuxTitle">Linux & SysAdmin</h3>
-          </div>
+          <div class="item-header"><h3 data-i18n="skillLinuxTitle">Linux & SysAdmin</h3></div>
           <p data-i18n="skillLinuxDesc">Ubuntu Server, SSH, Systemd, Cron, Nginx, Docker, диагностика через CLI.</p>
         </div>
-
         <div class="item">
-          <div class="item-header">
-            <h3 data-i18n="skillVpnTitle">VPN & Network Security</h3>
-          </div>
-          <p data-i18n="skillVpnDesc">WireGuard, AmneziaWG, OpenVPN, Pi-hole (DNS-фильтрация), роутинг и фаерволы.</p>
+          <div class="item-header"><h3 data-i18n="skillVpnTitle">VPN & Security</h3></div>
+          <p data-i18n="skillVpnDesc">WireGuard, AmneziaWG, OpenVPN, Pi-hole (DNS-фильтрация), роутинг.</p>
         </div>
-
         <div class="item">
-          <div class="item-header">
-            <h3 data-i18n="skillJsTitle">JavaScript & Web</h3>
-          </div>
+          <div class="item-header"><h3 data-i18n="skillJsTitle">JavaScript & Web</h3></div>
           <p data-i18n="skillJsDesc">Адаптивная верстка, HTML5/CSS3, клиентская логика и интеграция API.</p>
         </div>
-
         <div class="item">
-          <div class="item-header">
-            <h3 data-i18n="skillBashTitle">Bash & Automation</h3>
-          </div>
+          <div class="item-header"><h3 data-i18n="skillBashTitle">Bash & Automation</h3></div>
           <p data-i18n="skillBashDesc">Написание скриптов автоматизации рутинных задач и бэкапов.</p>
         </div>
-
         <div class="item">
-          <div class="item-header">
-            <h3 data-i18n="skillCppTitle">C++</h3>
-          </div>
+          <div class="item-header"><h3 data-i18n="skillCppTitle">C++</h3></div>
           <p data-i18n="skillCppDesc">Базовые алгоритмы, структуры данных, академические проекты.</p>
         </div>
       </div>
-    </section>
-
+    </div>
+  </div>
+</section>
     <section id="work">
       <div class="section-title">
         <svg width="20" height="20" fill="none" stroke="var(--brand)" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
@@ -908,6 +1126,48 @@
       }
     });
   }
+
+// Анимация гаджетов при скролле (Ноутбук для ПК, Смартфон для мобильных)
+  const lid = document.getElementById('laptopLid');
+  const laptopWrap = document.getElementById('laptopWrap');
+  const phoneWrap = document.getElementById('phoneWrap');
+  const scene = document.getElementById('skills');
+
+  // Автоматически скрываем ненужный элемент в зависимости от ширины экрана
+  function checkDeviceMode() {
+    if (window.innerWidth <= 768) {
+      if (laptopWrap) laptopWrap.style.display = 'none';
+      if (phoneWrap) phoneWrap.style.display = 'block';
+    } else {
+      if (laptopWrap) laptopWrap.style.display = 'block';
+      if (phoneWrap) phoneWrap.style.display = 'none';
+    }
+  }
+
+function updateDeviceAnimation() {
+    if (!scene) return;
+    const rect = scene.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const progress = (windowHeight - rect.top) / (windowHeight * 0.75);
+    const clampedProgress = Math.max(0, Math.min(1, progress));
+
+    if (window.innerWidth > 768) {
+      // Логика открытия ноутбука на ПК остается прежней
+      if (lid) {
+        const angle = -95 + (clampedProgress * 95);
+        lid.style.transform = `rotateX(${angle}deg)`;
+      }
+    } 
+  }
+
+  window.addEventListener('resize', checkDeviceMode);
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(updateDeviceAnimation);
+  }, { passive: true });
+
+  // Инициализация при загрузке
+  checkDeviceMode();
+  updateDeviceAnimation();
 
   document.addEventListener('DOMContentLoaded', initLanguage);
 </script>
