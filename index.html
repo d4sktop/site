@@ -570,7 +570,7 @@
     }
     .service-card:hover {
       border-color: var(--brand);
-      
+      background: rgba(255, 255, 255, 0.06);
       transform: translateY(-4px);
     }
     .service-icon {
@@ -1148,7 +1148,7 @@ function updateDeviceAnimation() {
     if (!scene) return;
     const rect = scene.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const progress = (windowHeight - rect.top) / (windowHeight * 0.75);
+    const progress = (windowHeight - rect.top) / (windowHeight * 0.9);
     const clampedProgress = Math.max(0, Math.min(1, progress));
 
     if (window.innerWidth > 768) {
