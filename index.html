@@ -3,28 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="pageTitle">Комронбек Аюбов</title>
-  <meta name="description" content="Визитка: контакты, навыки, администрирование Linux, разработка сайтов и VPN" />
+  <title data-i18n="pageTitle">Комронбек Аюбов — инженер-программист</title>
+  <meta name="description" content="Комронбек Аюбов — инженер-программист. Разработка на Go, администрирование Linux-серверов, защищённые сети и VPN, создание сайтов." />
+  <meta property="og:title" content="Комронбек Аюбов — инженер-программист" />
+  <meta property="og:description" content="Разработка на Go, администрирование Linux-серверов, защищённые сети и VPN, создание сайтов." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://d3sktop.site/" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='30' fill='%230b1220'/><text x='45%' y='40%' dominant-baseline='central' text-anchor='middle' fill='%236ae4ff' font-family='sans-serif' font-weight='800' font-size='45'>>_</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='30' fill='%230b1220'/><text x='45%' y='40%' dominant-baseline='central' text-anchor='middle' fill='%2338bdf8' font-family='sans-serif' font-weight='800' font-size='45'>>_</text></svg>">
 </head>
 
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">
+      <a class="brand" href="#top" aria-label="На главную">
         <div class="avatar">KA</div>
         <div>
           <h1 data-i18n="nameTitle">Комронбек Аюбов</h1>
-          <p data-i18n="role">Инженер-программист • Go / Linux / Web</p>
+          <p data-i18n="role">Инженер-программист · Go · Linux · Web</p>
         </div>
-      </div>
+      </a>
 
       <nav class="nav" id="navMenu" aria-label="Навигация">
         <a href="#about" data-i18n="navAbout">Обо мне</a>
         <a href="#services" data-i18n="navServices">Услуги</a>
         <a href="#skills" data-i18n="navSkills">Навыки</a>
         <a href="#work" data-i18n="navWork">Опыт</a>
+        <a href="#contact" data-i18n="navContact">Контакты</a>
 
         <div class="lang-switcher">
           <button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">
@@ -42,6 +52,7 @@
             <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
+            <span class="theme-label" data-i18n="themeLabel">Сменить тему</span>
           </button>
         </div>
 
@@ -58,15 +69,15 @@
       </button>
     </header>
 
-    <div class="hero">
-      <div class="card">
+    <div class="hero" id="top">
+      <div class="card hero-card">
         <div class="status-badge">
           <span class="status-dot"></span>
-          <span data-i18n="statusText">Открыт к заказам и проектам</span>
+          <span data-i18n="statusText">Принимаю новые проекты</span>
         </div>
-        <h2 data-i18n="heroTitle">Разработка <span class="grad">сервисов</span>, веб-сайтов и <span class="grad">Linux</span>-инфраструктуры</h2>
+        <h2 data-i18n="heroTitle">Разработка <span class="grad">сервисов</span>, сайтов и <span class="grad">Linux</span>-инфраструктуры</h2>
         <p class="lead" data-i18n="heroLead">
-          Учусь на 4 курсе по направлению инженер-программист. Специализируюсь на написании бэкенда на Go, администрировании Linux серверов, защищенных сетях (VPN) и веб-разработке.
+          Разрабатываю серверную часть на Go, администрирую Linux-серверы, настраиваю защищённые сети и создаю сайты. Веду проект от постановки задачи до стабильной работы.
         </p>
 
         <div class="cta">
@@ -75,49 +86,50 @@
             <span data-i18n="tgBtn">Написать в Telegram</span>
           </a>
           <a class="btn" href="#services">
-            <span data-i18n="servicesBtn">Услуги на заказ</span>
+            <span data-i18n="servicesBtn">Посмотреть услуги</span>
           </a>
         </div>
       </div>
 
       <div class="meta">
-        <div class="pill" id="contact">
+        <a class="pill" href="tel:+992989115520">
           <div class="ico">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
           <div>
             <b data-i18n="phoneLabel">Телефон</b>
-            <span><a href="tel:+992989115520">+992 98 911 5520</a></span>
+            <span>+992 98 911 55 20</span>
           </div>
-        </div>
-        <div class="pill">
+        </a>
+        <a class="pill" href="mailto:admin@d3sktop.site">
           <div class="ico">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div>
-            <b data-i18n="emailLabel">Email</b>
-            <span><a href="mailto:admin@d3sktop.site">admin@d3sktop.site</a></span>
+            <b data-i18n="emailLabel">Электронная почта</b>
+            <span>admin@d3sktop.site</span>
           </div>
-        </div>
+        </a>
         <div class="pill">
           <div class="ico">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div>
-            <b data-i18n="locLabel">Локация</b>
-            <span data-i18n="locValue">Худжанд / Удалённо</span>
+            <b data-i18n="locLabel">Местоположение</b>
+            <span data-i18n="locValue">Худжанд · работаю удалённо</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Features Section -->
+    <!-- Направления -->
     <div class="features-section">
       <div class="feature-row">
         <div class="feature-text">
-          <div class="feature-title" data-i18n="feat1Title">Системное Администрирование</div>
+          <div class="eyebrow" data-i18n="feat1Eyebrow">Направление 01</div>
+          <div class="feature-title" data-i18n="feat1Title">Системное администрирование</div>
           <div class="feature-desc" data-i18n="feat1Desc">
-            Использую Linux как основную рабочую среду. Настраиваю сервера с нуля: от базовой безопасности до развертывания веб-серверов, корпоративных почт и медиа-систем. Не боюсь работы в терминале и предпочитаю автоматизацию рутинных процессов.
+            Linux — моя основная рабочая среда. Настраиваю серверы с нуля: базовая защита, веб-серверы, корпоративная почта, медиасистемы. Повторяющиеся операции автоматизирую, чтобы система работала предсказуемо и не требовала ручного вмешательства.
           </div>
         </div>
         <div class="feature-visual">
@@ -126,19 +138,19 @@
               <span class="dot red"></span>
               <span class="dot yel"></span>
               <span class="dot grn"></span>
+              <span class="term-title">d3sktop@workstation</span>
             </div>
             <div class="term-body">
 <pre>
-<span class="c-green">d3sktop@dev-station</span>:<span class="c-blue">~</span>$ neofetch
-                     <span class="c-blue">Shell</span>: bash 5.2.15
-                     <span class="c-blue">Role</span>: Software & Network Engineer
-<span class="c-blue">       .o+`</span>          <span class="c-blue">OS</span>: Ubuntu 24.04 LTS aarch64
-<span class="c-blue">      `ooo/</span>          <span class="c-blue">Host</span>: Lenovo Thinkpad
-<span class="c-blue">     `+oooo:</span>         <span class="c-blue">Kernel</span>: Linux 6.8.0-server-arm64
-<span class="c-blue">    `+oooooo:</span>        <span class="c-blue">Uptime</span>: 42 days, 13 hours
-<span class="c-blue">    -+oooooo+:</span>       <span class="c-blue">Languages</span>: Go, C++, JS, Bash
-<span class="c-blue">      `/:-:/.</span>        <span class="c-blue">Network</span>: WireGuard, AmneziaWG                  
-                     <span class="c-blue">Services</span>: Apache, Dovecot, SystemD
+<span class="c-green">d3sktop@workstation</span>:<span class="c-blue">~</span>$ fastfetch
+<span class="c-blue">OS</span>         Ubuntu 24.04 LTS x86_64
+<span class="c-blue">Host</span>       Lenovo ThinkPad
+<span class="c-blue">Kernel</span>     6.8.0-generic
+<span class="c-blue">Shell</span>      bash 5.2
+<span class="c-blue">Role</span>       Software &amp; Network Engineer
+<span class="c-blue">Languages</span>  Go, JavaScript, Bash, C++
+<span class="c-blue">Network</span>    WireGuard, AmneziaWG, OpenVPN
+<span class="c-blue">Services</span>   Nginx, Apache, Dovecot, Docker, systemd
 </pre>
             </div>
           </div>
@@ -147,9 +159,10 @@
 
       <div class="feature-row">
         <div class="feature-text">
-          <div class="feature-title" data-i18n="feat2Title">Сетевая Инфраструктура и VPN</div>
+          <div class="eyebrow" data-i18n="feat2Eyebrow">Направление 02</div>
+          <div class="feature-title" data-i18n="feat2Title">Сетевая инфраструктура и VPN</div>
           <div class="feature-desc" data-i18n="feat2Desc">
-            Проектирование и настройка защищенных сетей, туннелей и мульти-бранч архитектур. Обход блокировок и split-туннелирование с использованием AmneziaWG. Развертывание локальных DNS серверов для блокировки рекламы и защиты приватности.
+            Проектирую и настраиваю защищённые сети: шифрованные туннели, объединение нескольких филиалов в единую сеть, раздельная маршрутизация трафика (split tunneling) на базе WireGuard и AmneziaWG. Развёртываю локальные DNS-серверы (Pi-hole) для фильтрации рекламы и вредоносных доменов.
           </div>
         </div>
         <div class="feature-visual">
@@ -158,6 +171,7 @@
               <span class="dot red"></span>
               <span class="dot yel"></span>
               <span class="dot grn"></span>
+              <span class="term-title">d3sktop@gateway</span>
             </div>
             <div class="term-body">
 <pre>
@@ -176,7 +190,7 @@
 <span class="c-green">d3sktop@gateway</span>:<span class="c-blue">~</span>$ systemctl status pihole-FTL
 <span class="c-green">●</span> pihole-FTL.service - Pi-hole FTL
      Active: <span class="c-green">active (running)</span> since Sun 2026-08-16
-<span class="c-green">d3sktop@gateway</span>:<span class="c-blue">~</span>$ <span class="cursor" style="animation: blink 1s step-end infinite; border-left: 8px solid #cbd5e1;"></span>
+<span class="c-green">d3sktop@gateway</span>:<span class="c-blue">~</span>$ <span class="cursor"></span>
 </pre>
             </div>
           </div>
@@ -184,57 +198,57 @@
       </div>
     </div>
 
+    <!-- Обо мне -->
+    <section id="about">
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="aboutEyebrow">Обо мне</div>
+        <h2 class="section-title" data-i18n="aboutTitle">Коротко о себе</h2>
+      </div>
+      <div class="card about-card">
+        <p class="lead" data-i18n="aboutText">
+          Студент 4 курса по специальности «Инженер-программист», совмещаю учёбу с практической работой. Занимаюсь веб-разработкой, сетями и администрированием серверов: автоматизирую рабочие процессы, разворачиваю инфраструктуру как на собственном оборудовании, так и на облачных VPS. Каждый проект довожу от планирования до стабильного релиза.
+        </p>
+      </div>
+    </section>
+
     <!-- Услуги -->
     <section id="services">
-      <div class="section-title">
-        <svg width="20" height="20" fill="none" stroke="var(--brand)" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
-        <span data-i18n="servicesTitle">Услуги на заказ</span>
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="servicesEyebrow">Услуги</div>
+        <h2 class="section-title" data-i18n="servicesTitle">Чем могу помочь</h2>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h3 data-i18n="srvWebTitle">Создание сайтов на заказ</h3>
-          <p data-i18n="srvWebDesc">Разработка современных адаптивных сайтов-визиток, лендингов и веб-интерфейсов. Высокая скорость загрузки и чистый код.</p>
+          <h3 data-i18n="srvWebTitle">Разработка сайтов</h3>
+          <p data-i18n="srvWebDesc">Сайты-визитки, лендинги и веб-интерфейсы с адаптивной вёрсткой. Быстрая загрузка, аккуратный код, помощь с размещением на хостинге.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
           </div>
-          <h3 data-i18n="srvLinuxTitle">Администрирование Linux</h3>
-          <p data-i18n="srvLinuxDesc">Настройка VPS/VDS, развёртывание веб-серверов (Nginx/Apache), настройка безопасности, бэкапов и систем мониторинга.</p>
+          <h3 data-i18n="srvLinuxTitle">Администрирование Linux-серверов</h3>
+          <p data-i18n="srvLinuxDesc">Настройка VPS/VDS, развёртывание веб-серверов (Nginx, Apache), защита сервера, резервное копирование и мониторинг.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
-          <h3 data-i18n="srvVpnTitle">Личные VPN-сервисы</h3>
-          <p data-i18n="srvVpnDesc">Установка и настройка приватных VPN под ключ (WireGuard, AmneziaWG, OpenVPN) для обхода блокировок и защиты трафика.</p>
+          <h3 data-i18n="srvVpnTitle">Защищённые сети и VPN</h3>
+          <p data-i18n="srvVpnDesc">Настройка VPN под ключ (WireGuard, AmneziaWG, OpenVPN): безопасный удалённый доступ, шифрование трафика, объединение офисов в единую сеть.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Обо мне -->
-    <section id="about">
-      <div class="section-title">
-        <svg width="20" height="20" fill="none" stroke="var(--brand)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span data-i18n="aboutTitle">Обо мне</span>
-      </div>
-      <div class="card">
-        <p class="lead" style="margin:0" data-i18n="aboutText">
-          Увлекаюсь веб-разработкой, сетями и администрированием серверов. Обладаю опытом автоматизации рабочих процессов, развёртывания инфраструктуры в домашней сети и на зарубежных VPS. Довожу каждый проект от этапа планирования до финального стабильного релиза.
-        </p>
       </div>
     </section>
 
     <!-- Навыки -->
     <section id="skills" class="device-scene">
-      <div class="section-title" style="margin-bottom: 25px;">
-        <svg width="20" height="20" fill="none" stroke="var(--brand)" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        <span data-i18n="skillsTitle">Навыки</span>
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="skillsEyebrow">Навыки</div>
+        <h2 class="section-title" data-i18n="skillsTitle">Технологии и инструменты</h2>
       </div>
 
       <!-- Ноутбук (ПК) -->
@@ -266,161 +280,205 @@
 
     <!-- Опыт работы -->
     <section id="work">
-      <div class="section-title">
-        <svg width="20" height="20" fill="none" stroke="var(--brand)" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        <span data-i18n="workTitle">Опыт работы и Проекты</span>
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="workEyebrow">Опыт</div>
+        <h2 class="section-title" data-i18n="workTitle">Опыт работы и проекты</h2>
       </div>
-      <div class="grid" style="grid-template-columns:1fr">
+      <div class="timeline">
         <div class="row">
           <div>
-            <b data-i18n="job2Title">Facility / IT Specialist • “Arkon”</b>
-            <span>Осень 2025 — настоящее время</span>
-            <span data-i18n="job2Desc">Поддержка IT-инфраструктуры, автоматизация задач, разработка внутренностей веб-сервисов для отчётности и парсинга данных.</span>
+            <b data-i18n="job2Title">Facility / IT Specialist · «Arkon»</b>
+            <span class="period" data-i18n="job2Period">Осень 2025 — настоящее время</span>
+            <span data-i18n="job2Desc">Поддержка IT-инфраструктуры компании, автоматизация рутинных задач, разработка серверной части внутренних веб-сервисов для отчётности и сбора данных.</span>
           </div>
-          <div class="tag" data-i18n="job2Tag">IT / Поддержка</div>
+          <div class="tag" data-i18n="job2Tag">IT-инфраструктура</div>
         </div>
 
         <div class="row">
           <div>
-            <b data-i18n="pet2Title">Фриланс & Pet-проекты</b>
-            <span>Постоянно</span>
-            <span data-i18n="pet2Desc">Разработка сайтов под ключ, администрирование Linux-серверов по SSH, развёртывание домашних NAS, медиа-серверов Jellyfin, BitTorrent, Pi-Hole и поднятие персональных VPN-узлов.</span>
+            <b data-i18n="pet2Title">Частные заказы и собственные проекты</b>
+            <span class="period" data-i18n="pet2Period">Параллельно с основной работой</span>
+            <span data-i18n="pet2Desc">Разработка сайтов под ключ, сопровождение Linux-серверов, развёртывание сетевых хранилищ (NAS), медиасерверов (Jellyfin), DNS-фильтрации (Pi-hole) и VPN-шлюзов.</span>
           </div>
           <div class="tag" data-i18n="pet2Tag">Фриланс</div>
         </div>
 
         <div class="row">
           <div>
-            <b data-i18n="job1Title">Сотрудник приёмной комиссии • АФЭК</b>
-            <span>Весна 2024 — Осень 2024</span>
-            <span data-i18n="job1Desc">Работа с документооборотом, сопровождение абитуриентов, первичная техническая помощь.</span>
+            <b data-i18n="job1Title">Специалист приёмной комиссии · АФЭК</b>
+            <span class="period" data-i18n="job1Period">Весна 2024 — осень 2024</span>
+            <span data-i18n="job1Desc">Ведение документации, консультирование абитуриентов, техническая поддержка рабочих мест.</span>
           </div>
-          <div class="tag" data-i18n="job1Tag">Документы</div>
+          <div class="tag" data-i18n="job1Tag">Документооборот</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact">
+      <div class="card contact-card">
+        <div>
+          <h2 class="contact-title" data-i18n="contactTitle">Обсудим ваш проект</h2>
+          <p class="lead" data-i18n="contactText">Опишите задачу в Telegram или по почте — предложу решение, сроки и стоимость.</p>
+        </div>
+        <div class="cta">
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://t.me/d3sk_top">
+            <span data-i18n="tgBtn">Написать в Telegram</span>
+          </a>
+          <a class="btn" href="mailto:admin@d3sktop.site">admin@d3sktop.site</a>
         </div>
       </div>
     </section>
 
     <footer>
-      © <span id="y"></span> <span data-i18n="footerName">Комронбек Аюбов</span> • All rights reserved
+      © <span id="y"></span> <span data-i18n="footerName">Комронбек Аюбов</span>. <span data-i18n="footerRights">Все права защищены.</span>
     </footer>
   </div>
 
 <script>
-  // Словарный запас для языков
+  // Тексты для обоих языков
   const i18n = {
     ru: {
-      pageTitle: "Комронбек Аюбов",
+      pageTitle: "Комронбек Аюбов — инженер-программист",
       nameTitle: "Комронбек Аюбов",
-      role: "Инженер-программист • Go / Linux / Web",
+      role: "Инженер-программист · Go · Linux · Web",
       navAbout: "Обо мне",
       navServices: "Услуги",
       navSkills: "Навыки",
       navWork: "Опыт",
-      statusText: "Открыт к заказам и проектам",
-      heroTitle: 'Разработка <span class="grad">сервисов</span>, веб-сайтов и <span class="grad">Linux</span>-инфраструктуры',
-      heroLead: 'Учусь на 4 курсе по направлению инженер-программист. Специализируюсь на написании бэкенда на Go, администрировании Linux серверов, защищенных сетях (VPN) и веб-разработке.',
+      navContact: "Контакты",
+      themeLabel: "Сменить тему",
+      statusText: "Принимаю новые проекты",
+      heroTitle: 'Разработка <span class="grad">сервисов</span>, сайтов и <span class="grad">Linux</span>-инфраструктуры',
+      heroLead: "Разрабатываю серверную часть на Go, администрирую Linux-серверы, настраиваю защищённые сети и создаю сайты. Веду проект от постановки задачи до стабильной работы.",
       tgBtn: "Написать в Telegram",
-      servicesBtn: "Услуги на заказ",
+      servicesBtn: "Посмотреть услуги",
       phoneLabel: "Телефон",
-      emailLabel: "Email",
-      locLabel: "Локация",
-      locValue: "Худжанд / Удалённо",
-      feat1Title: "Системное Администрирование",
-      feat1Desc: "Использую Linux как основную рабочую среду. Настраиваю сервера с нуля: от базовой безопасности до развертывания веб-серверов, корпоративных почт и медиа-систем. Не боюсь работы в терминале и предпочитаю автоматизацию рутинных процессов.",
-      feat2Title: "Сетевая Инфраструктура и VPN",
-      feat2Desc: "Проектирование и настройка защищенных сетей, туннелей и мульти-бранч архитектур. Обход блокировок и split-туннелирование с использованием AmneziaWG. Развертывание локальных DNS серверов (Pi-hole) для блокировки рекламы и защиты приватности.",
-      servicesTitle: "Услуги на заказ",
-      srvWebTitle: "Создание сайтов на заказ",
-      srvWebDesc: "Разработка современных адаптивных сайтов-визиток, лендингов и веб-интерфейсов. Высокая скорость загрузки и чистый код.",
-      srvLinuxTitle: "Администрирование Linux",
-      srvLinuxDesc: "Настройка VPS/VDS, развёртывание веб-серверов (Nginx/Apache), настройка безопасности, бэкапов и систем мониторинга.",
-      srvVpnTitle: "Личные VPN-сервисы",
-      srvVpnDesc: "Установка и настройка приватных VPN под ключ (WireGuard, AmneziaWG, OpenVPN) для обхода блокировок и защиты трафика.",
-      aboutTitle: "Обо мне",
-      aboutText: "Увлекаюсь веб-разработкой, сетями и администрированием серверов. Обладаю опытом автоматизации рабочих процессов, развёртывания инфраструктуры в домашней сети и на зарубежных VPS. Довожу каждый проект от этапа планирования до финального стабильного релиза.",
-      skillsTitle: "Навыки",
+      emailLabel: "Электронная почта",
+      locLabel: "Местоположение",
+      locValue: "Худжанд · работаю удалённо",
+      feat1Eyebrow: "Направление 01",
+      feat1Title: "Системное администрирование",
+      feat1Desc: "Linux — моя основная рабочая среда. Настраиваю серверы с нуля: базовая защита, веб-серверы, корпоративная почта, медиасистемы. Повторяющиеся операции автоматизирую, чтобы система работала предсказуемо и не требовала ручного вмешательства.",
+      feat2Eyebrow: "Направление 02",
+      feat2Title: "Сетевая инфраструктура и VPN",
+      feat2Desc: "Проектирую и настраиваю защищённые сети: шифрованные туннели, объединение нескольких филиалов в единую сеть, раздельная маршрутизация трафика (split tunneling) на базе WireGuard и AmneziaWG. Развёртываю локальные DNS-серверы (Pi-hole) для фильтрации рекламы и вредоносных доменов.",
+      aboutEyebrow: "Обо мне",
+      aboutTitle: "Коротко о себе",
+      aboutText: "Студент 4 курса по специальности «Инженер-программист», совмещаю учёбу с практической работой. Занимаюсь веб-разработкой, сетями и администрированием серверов: автоматизирую рабочие процессы, разворачиваю инфраструктуру как на собственном оборудовании, так и на облачных VPS. Каждый проект довожу от планирования до стабильного релиза.",
+      servicesEyebrow: "Услуги",
+      servicesTitle: "Чем могу помочь",
+      srvWebTitle: "Разработка сайтов",
+      srvWebDesc: "Сайты-визитки, лендинги и веб-интерфейсы с адаптивной вёрсткой. Быстрая загрузка, аккуратный код, помощь с размещением на хостинге.",
+      srvLinuxTitle: "Администрирование Linux-серверов",
+      srvLinuxDesc: "Настройка VPS/VDS, развёртывание веб-серверов (Nginx, Apache), защита сервера, резервное копирование и мониторинг.",
+      srvVpnTitle: "Защищённые сети и VPN",
+      srvVpnDesc: "Настройка VPN под ключ (WireGuard, AmneziaWG, OpenVPN): безопасный удалённый доступ, шифрование трафика, объединение офисов в единую сеть.",
+      skillsEyebrow: "Навыки",
+      skillsTitle: "Технологии и инструменты",
       skillGoTitle: "Go (Golang)",
-      skillGoDesc: "Бэкенд-сервисы, REST API, CLI утилиты и параллельная обработка данных.",
-      skillLinuxTitle: "Linux & SysAdmin",
-      skillLinuxDesc: "Ubuntu Server, SSH, Systemd, Cron, Nginx, Docker, диагностика через CLI.",
-      skillVpnTitle: "VPN & Security",
-      skillVpnDesc: "WireGuard, AmneziaWG, OpenVPN, Pi-hole (DNS-фильтрация), роутинг и фаерволы.",
-      skillJsTitle: "JavaScript & Web",
-      skillJsDesc: "Адаптивная верстка, HTML5/CSS3, клиентская логика и интеграция API.",
-      skillBashTitle: "Bash & Automation",
-      skillBashDesc: "Написание скриптов автоматизации рутинных задач и бэкапов.",
+      skillGoDesc: "Серверные приложения, REST API, консольные утилиты, конкурентная обработка данных.",
+      skillLinuxTitle: "Linux и администрирование",
+      skillLinuxDesc: "Ubuntu Server, SSH, systemd, cron, Nginx, Docker, диагностика из командной строки.",
+      skillVpnTitle: "VPN и сетевая безопасность",
+      skillVpnDesc: "WireGuard, AmneziaWG, OpenVPN, Pi-hole (DNS-фильтрация), маршрутизация, межсетевые экраны.",
+      skillJsTitle: "JavaScript и веб",
+      skillJsDesc: "Адаптивная вёрстка (HTML5, CSS3), клиентская логика, интеграция с API.",
+      skillBashTitle: "Bash и автоматизация",
+      skillBashDesc: "Скрипты для резервного копирования, обслуживания серверов и рутинных задач.",
       skillCppTitle: "C++",
-      skillCppDesc: "Базовые алгоритмы, структуры данных, академические проекты.",
-      workTitle: "Опыт работы и Проекты",
-      job1Title: "Сотрудник приёмной комиссии • АФЭК",
-      job1Desc: "Работа с документооборотом, сопровождение абитуриентов, первичная техническая помощь.",
-      job1Tag: "Документы",
-      job2Title: "Facility / IT Specialist • “Arkon”",
-      job2Desc: "Поддержка IT-инфраструктуры, автоматизация задач, разработка внутренностей веб-сервисов для отчётности и парсинга данных.",
-      job2Tag: "IT / Поддержка",
-      pet2Title: "Фриланс & Pet-проекты",
-      pet2Desc: "Разработка сайтов под ключ, администрирование Linux-серверов по SSH, развёртывание домашних NAS, медиа-серверов Jellyfin, BitTorrent, Pi-Hole и поднятие персональных VPN-узлов.",
+      skillCppDesc: "Алгоритмы и структуры данных, учебные проекты.",
+      workEyebrow: "Опыт",
+      workTitle: "Опыт работы и проекты",
+      job2Title: "Facility / IT Specialist · «Arkon»",
+      job2Period: "Осень 2025 — настоящее время",
+      job2Desc: "Поддержка IT-инфраструктуры компании, автоматизация рутинных задач, разработка серверной части внутренних веб-сервисов для отчётности и сбора данных.",
+      job2Tag: "IT-инфраструктура",
+      pet2Title: "Частные заказы и собственные проекты",
+      pet2Period: "Параллельно с основной работой",
+      pet2Desc: "Разработка сайтов под ключ, сопровождение Linux-серверов, развёртывание сетевых хранилищ (NAS), медиасерверов (Jellyfin), DNS-фильтрации (Pi-hole) и VPN-шлюзов.",
       pet2Tag: "Фриланс",
-      footerName: "Комронбек Аюбов"
+      job1Title: "Специалист приёмной комиссии · АФЭК",
+      job1Period: "Весна 2024 — осень 2024",
+      job1Desc: "Ведение документации, консультирование абитуриентов, техническая поддержка рабочих мест.",
+      job1Tag: "Документооборот",
+      contactTitle: "Обсудим ваш проект",
+      contactText: "Опишите задачу в Telegram или по почте — предложу решение, сроки и стоимость.",
+      footerName: "Комронбек Аюбов",
+      footerRights: "Все права защищены."
     },
     en: {
-      pageTitle: "Komronbek Ayubov",
+      pageTitle: "Komronbek Ayubov — Software Engineer",
       nameTitle: "Komronbek Ayubov",
-      role: "Software & Network Engineer • Go / Linux / Web",
+      role: "Software Engineer · Go · Linux · Web",
       navAbout: "About",
       navServices: "Services",
       navSkills: "Skills",
       navWork: "Experience",
-      statusText: "Available for freelance & projects",
-      heroTitle: 'Building <span class="grad">services</span>, websites & <span class="grad">Linux</span> infrastructure',
-      heroLead: '4th-year Software Engineering student. Focused on Go backend development, Linux administration, private VPN setups, and web development.',
+      navContact: "Contact",
+      themeLabel: "Toggle theme",
+      statusText: "Available for new projects",
+      heroTitle: 'Building <span class="grad">services</span>, websites &amp; <span class="grad">Linux</span> infrastructure',
+      heroLead: "I build Go backends, administer Linux servers, set up secure networks and develop websites — taking each project from requirements to stable operation.",
       tgBtn: "Message on Telegram",
-      servicesBtn: "Custom Services",
+      servicesBtn: "View services",
       phoneLabel: "Phone",
       emailLabel: "Email",
       locLabel: "Location",
-      locValue: "Khujand / Remote",
-      feat1Title: "System Administration",
-      feat1Desc: "I use Linux as my primary operating system. I set up servers from scratch: from basic security to deploying web servers, corporate email systems, and media systems. I’m comfortable working in the terminal and prefer to automate routine processes.",
-      feat2Title: "Network Infrastructure & VPN",
-      feat2Desc: "Designing and configuring secure networks, tunnels, and multi-branch architectures. Bypassing restrictions and split-tunneling using AmneziaWG. Deploying local DNS servers (Pi-hole) for ad-blocking and privacy protection.",
-      servicesTitle: "Custom Services",
-      srvWebTitle: "Custom Web Development",
-      srvWebDesc: "Building modern responsive business websites, landing pages, and web apps with clean code and top performance.",
-      srvLinuxTitle: "Linux Administration",
-      srvLinuxDesc: "VPS/VDS configuration, web server deployment (Nginx/Apache), security hardening, backups, and monitoring.",
-      srvVpnTitle: "Turnkey VPN Deployment",
-      srvVpnDesc: "Setting up private VPN services (WireGuard, AmneziaWG, OpenVPN) for secure internet access and bypassing restrictions.",
-      aboutTitle: "About Me",
-      aboutText: "Passionate about software development, networking, and server administration. Experienced in workflow automation, self-hosting homelab services, and cloud VPS deployments. Focused on shipping clean, reliable code.",
-      skillsTitle: "Skills",
+      locValue: "Khujand · working remotely",
+      feat1Eyebrow: "Focus 01",
+      feat1Title: "System administration",
+      feat1Desc: "Linux is my primary working environment. I set up servers from scratch: baseline hardening, web servers, corporate mail and media systems. I automate repetitive operations so systems behave predictably and don't need manual intervention.",
+      feat2Eyebrow: "Focus 02",
+      feat2Title: "Network infrastructure & VPN",
+      feat2Desc: "I design and configure secure networks: encrypted tunnels, multi-branch site-to-site connectivity and split tunneling built on WireGuard and AmneziaWG. I also deploy local DNS servers (Pi-hole) to filter ads and malicious domains.",
+      aboutEyebrow: "About",
+      aboutTitle: "In short",
+      aboutText: "Fourth-year Software Engineering student combining studies with hands-on work. I focus on web development, networking and server administration: automating workflows and deploying infrastructure both on my own hardware and on cloud VPS. I take every project from planning to a stable release.",
+      servicesEyebrow: "Services",
+      servicesTitle: "How I can help",
+      srvWebTitle: "Web development",
+      srvWebDesc: "Business card sites, landing pages and web interfaces with responsive layouts. Fast loading, clean code and help with hosting.",
+      srvLinuxTitle: "Linux server administration",
+      srvLinuxDesc: "VPS/VDS setup, web server deployment (Nginx, Apache), server hardening, backups and monitoring.",
+      srvVpnTitle: "Secure networks & VPN",
+      srvVpnDesc: "Turnkey VPN setup (WireGuard, AmneziaWG, OpenVPN): secure remote access, traffic encryption and connecting offices into one network.",
+      skillsEyebrow: "Skills",
+      skillsTitle: "Technologies & tools",
       skillGoTitle: "Go (Golang)",
-      skillGoDesc: "Backend services, REST APIs, CLI tools, and concurrent data processing.",
-      skillLinuxTitle: "Linux & SysAdmin",
-      skillLinuxDesc: "Ubuntu Server, SSH, Systemd, Cron, Nginx, Docker, CLI troubleshooting.",
-      skillVpnTitle: "VPN & Network Security",
-      skillVpnDesc: "WireGuard, AmneziaWG, OpenVPN, Pi-hole (DNS filtering), routing & firewalls.",
-      skillJsTitle: "JavaScript & Web",
-      skillJsDesc: "Responsive layouts, HTML5/CSS3, client-side logic, API integrations.",
-      skillBashTitle: "Bash & Automation",
-      skillBashDesc: "Automation scripts for routine tasks, backups, and server maintenance.",
+      skillGoDesc: "Backend services, REST APIs, CLI tools and concurrent data processing.",
+      skillLinuxTitle: "Linux & system administration",
+      skillLinuxDesc: "Ubuntu Server, SSH, systemd, cron, Nginx, Docker, command-line troubleshooting.",
+      skillVpnTitle: "VPN & network security",
+      skillVpnDesc: "WireGuard, AmneziaWG, OpenVPN, Pi-hole (DNS filtering), routing and firewalls.",
+      skillJsTitle: "JavaScript & web",
+      skillJsDesc: "Responsive layouts (HTML5, CSS3), client-side logic, API integrations.",
+      skillBashTitle: "Bash & automation",
+      skillBashDesc: "Scripts for backups, server maintenance and routine tasks.",
       skillCppTitle: "C++",
-      skillCppDesc: "Basic algorithms, data structures, academic projects.",
-      workTitle: "Experience & Projects",
-      job1Title: "Admissions Office Specialist • AFEK",
-      job1Desc: "Handled documentation, applicant relations, and basic tech support.",
-      job1Tag: "Docs / Support",
-      job2Title: "Facility / IT Specialist • “Arkon”",
-      job2Desc: "IT infrastructure support, task automation, developing web utilities for automated data extraction.",
-      job2Tag: "IT / Support",
-      pet2Title: "Freelance & Side Projects",
-      pet2Desc: "Custom web development, SSH server administration, home NAS deployments, hosting Jellyfin, BitTorrent, Pi-Hole, and VPN nodes.",
+      skillCppDesc: "Algorithms and data structures, academic projects.",
+      workEyebrow: "Experience",
+      workTitle: "Experience & projects",
+      job2Title: "Facility / IT Specialist · Arkon",
+      job2Period: "Fall 2025 — present",
+      job2Desc: "Supporting the company's IT infrastructure, automating routine tasks, building the backend of internal web services for reporting and data collection.",
+      job2Tag: "IT infrastructure",
+      pet2Title: "Freelance & own projects",
+      pet2Period: "Alongside main job",
+      pet2Desc: "Turnkey websites, Linux server maintenance, deploying network storage (NAS), media servers (Jellyfin), DNS filtering (Pi-hole) and VPN gateways.",
       pet2Tag: "Freelance",
-      footerName: "Komronbek Ayubov"
+      job1Title: "Admissions Office Specialist · AFEK",
+      job1Period: "Spring 2024 — Fall 2024",
+      job1Desc: "Document management, applicant consultations, workstation technical support.",
+      job1Tag: "Documentation",
+      contactTitle: "Let's discuss your project",
+      contactText: "Describe your task on Telegram or by email — I'll propose a solution, timeline and cost.",
+      footerName: "Komronbek Ayubov",
+      footerRights: "All rights reserved."
     }
   };
 
-  // Генерация динамической сетки навыков
+  // Сетка навыков
   const skillsData = [
     { titleKey: 'skillGoTitle', descKey: 'skillGoDesc' },
     { titleKey: 'skillLinuxTitle', descKey: 'skillLinuxDesc' },
@@ -441,45 +499,43 @@
     document.querySelectorAll('.skills-container').forEach(c => c.innerHTML = html);
   }
 
-  // Управление локализацией
-function setLanguage(lang) {
-  if (!i18n[lang]) return;
+  function storageGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function storageSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
-  const elements = document.querySelectorAll('[data-i18n]');
+  // Локализация
+  function setLanguage(lang) {
+    if (!i18n[lang]) return;
 
-  // 1. Запускаем анимацию исчезновения
-  elements.forEach(el => el.classList.add('i18n-animating'));
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => el.classList.add('i18n-animating'));
 
-  setTimeout(() => {
-    // 2. Меняем текст в момент полного размытия
-    document.documentElement.lang = lang;
-    localStorage.setItem('lang', lang);
+    setTimeout(() => {
+      document.documentElement.lang = lang;
+      storageSet('lang', lang);
 
-    if (i18n[lang].pageTitle) document.title = i18n[lang].pageTitle;
+      if (i18n[lang].pageTitle) document.title = i18n[lang].pageTitle;
 
-    elements.forEach(el => {
-      const key = el.dataset.i18n;
-      const val = i18n[lang][key];
-      if (val) {
-        if (val.includes('<')) el.innerHTML = val;
-        else el.textContent = val;
-      }
-      // 3. Возвращаем текст с плавным проявлением
-      el.classList.remove('i18n-animating');
-    });
+      elements.forEach(el => {
+        const val = i18n[lang][el.dataset.i18n];
+        if (val) {
+          if (val.includes('<') || val.includes('&')) el.innerHTML = val;
+          else el.textContent = val;
+        }
+        el.classList.remove('i18n-animating');
+      });
 
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
-  }, 150); // Задержка равна половине длительности CSS-перехода
-}
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }, 150);
+  }
 
   function initLanguage() {
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
     });
 
-    const savedLang = localStorage.getItem('lang');
+    const savedLang = storageGet('lang');
     if (savedLang && i18n[savedLang]) {
       setLanguage(savedLang);
       return;
@@ -489,11 +545,10 @@ function setLanguage(lang) {
     setLanguage(sysLang.startsWith('ru') ? 'ru' : 'en');
   }
 
-  // Управление мобильным меню
+  // Мобильное меню
   function initMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
-
     if (!hamburger || !navMenu) return;
 
     const toggleMenu = (state) => {
@@ -518,7 +573,7 @@ function setLanguage(lang) {
     });
   }
 
-  // Анимация гаджета при скролле
+  // Анимация ноутбука при прокрутке
   function initDeviceAnimation() {
     const lid = document.getElementById('laptopLid');
     const laptopWrap = document.getElementById('laptopWrap');
@@ -538,21 +593,19 @@ function setLanguage(lang) {
       lid.style.transform = `rotateX(${-95 + progress * 95}deg)`;
     };
 
-    window.addEventListener('resize', checkDeviceMode);
+    window.addEventListener('resize', () => { checkDeviceMode(); updateDeviceAnimation(); });
     window.addEventListener('scroll', () => requestAnimationFrame(updateDeviceAnimation), { passive: true });
 
     checkDeviceMode();
     updateDeviceAnimation();
   }
 
-  // Управление темой оформления
+  // Тема оформления
   function initTheme() {
     const themeBtn = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = storageGet('theme');
 
-    if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    }
+    if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
 
     themeBtn?.addEventListener('click', () => {
       const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -560,11 +613,10 @@ function setLanguage(lang) {
       const newTheme = isLight ? 'dark' : 'light';
 
       document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
+      storageSet('theme', newTheme);
     });
   }
 
-  // Инициализация после загрузки DOM
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('y').textContent = new Date().getFullYear();
     renderSkills();
